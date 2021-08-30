@@ -20,3 +20,12 @@ post '/plus' do
   count.save
   redirect "/"
 end
+
+post '/minus' do
+  count = Count.first
+  if count.number > 0
+    count.number = count.number - 1
+    count.save
+  end
+  redirect "/"
+end
