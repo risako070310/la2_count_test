@@ -29,3 +29,24 @@ post '/minus' do
   end
   redirect "/"
 end
+
+post '/reset' do
+  count = Count.first
+  count.number = 0
+  count.save
+  redirect "/"
+end
+
+post '/kakeru2' do
+  count = Count.first
+  count.number = count.number * 2
+  count.save
+  redirect "/"
+end
+
+post '/waru2' do
+  count = Count.first
+  count.number = count.number / 2
+  count.save
+  redirect "/"
+end
